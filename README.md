@@ -1,13 +1,16 @@
 # no-ae-in-expectations-mode
 
-A Clojure library designed to ... well, that part is up to you.
+Demonstration of bug in https://github.com/gar3thjon3s/expectations-mode
 
-## Usage
+# what to do
 
-FIXME
+    git clone https://github.com/dchelimsky/no-ae-in-expectations-mode.git
+    cd no-ae-in-expectations-mode
+    lein deps
+    lein expectations
 
-## License
+You should see a java.lang.ArithmeticException.
 
-Copyright © 2013 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
+Now run test/no\_ae\_in\_expectations\_mode/core\_test.clj in emacs using
+expectations-mode and you should see "Ran 3 tests, 0 failures, 0 errors"
+even though there are 4 expectations and one caused the `ArithmeticException`.
